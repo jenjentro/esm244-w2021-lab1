@@ -34,3 +34,10 @@ top_5_status <- sf_trees %>%
   slice_max(tree_count, n = 5) # Tell function to look for top 5
 ```
 
+Make a graph of those top 5 observations by legal status.
+
+```{r}
+ggplot(data = top_5_status,
+       aes(x = legal_status, y = tree_count))
+```
+
