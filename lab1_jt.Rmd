@@ -38,6 +38,13 @@ Make a graph of those top 5 observations by legal status.
 
 ```{r}
 ggplot(data = top_5_status,
-       aes(x = legal_status, y = tree_count))
+       aes(x = fct_reorder(legal_status, tree_count), 
+           y = tree_count)) +
+  geom_col() +
+  labs(x = "Legal Status",
+       y = "Tree Count") +
+  coord_flip() +
+  theme_minimal()
 ```
 
+### A few more data wrangling refresher examples
